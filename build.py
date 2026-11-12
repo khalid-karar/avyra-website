@@ -236,7 +236,7 @@ MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "C
 
 def header(lang, key):
     t = T[lang]; b = t["base"]; o = t["other"]
-    links = "".join(f'<a href="{b}#{k}">{n}</a>' for k, n in t["nav"])
+    links = "".join(f'<a href="{path_for(lang, k)}"' + (' aria-current="page"' if key == k else "") + f'>{n}</a>' for k, n in t["nav"])
     return f'''<a class="skip" href="#main">{t["skip"]}</a>
 <header class="site">
   <a class="brand" href="{b}" aria-label="{esc(t["brand"])} - {t["home_label"]}"><img src="/assets/img/mark.png" alt="" width="46" height="48"><span class="brand-txt"><span class="brand-name">{esc(t["brand_core"])}</span><span class="brand-co">{t["co"]}</span></span></a>
@@ -258,7 +258,7 @@ def contact_items(lang):
 
 def footer(lang):
     t = T[lang]; L = t["labels"]; b = t["base"]
-    nav = "".join(f'<li><a href="{b}#{k}">{n}</a></li>' for k, n in t["nav"][:4])
+    nav = "".join(f'<li><a href="{path_for(lang, k)}">{n}</a></li>' for k, n in t["nav"][:4])
     contact = "".join(f"<li>{v}</li>" for _, v in contact_items(lang))
     return f'''<footer class="site">
   <div class="wrap">
@@ -293,26 +293,91 @@ def form_html(lang):
 </form>'''
 
 # ---------------------------------------------------------------- pages
-def home(lang):
-    t = T[lang]
-    arrow = "←" if lang == "ar" else "→"
-    trust = "".join("<li>" + esc(x).replace("PfMP · PgMP · PMP", "<bdi>PfMP · PgMP · PMP</bdi>") + "</li>" for x in t["trust"])
-    logo = f"/assets/img/logo-{lang}.png"
-    dims = {"ar": (440, 486), "en": (440, 573)}[lang]
+PAGES = ["about", "services", "projects", "team", "contact"]
+GO = {
+ "ar": {"about": "رؤيتنا ورسالتنا، ولماذا نجمع الحوكمة وGeoAI والذكاء الاصطناعي المؤسسي في فريق واحد.",
+        "services": "ركيزتان متكاملتان: الذكاء الاصطناعي المؤسسي والنشر السيادي، والاستشارات في GeoAI.",
+        "projects": "فئات المشاريع التي نعمل فيها ودورنا في كل منها.",
+        "team": "قيادة الشركة والشبكة الفنية التي تدعمها.",
+        "contact": "اكتب لنا عن مشروعك، ونرد خلال يوم عمل واحد.", "more": "اعرف المزيد"},
+ "en": {"about": "Our vision and mission, and why we bring governance, GeoAI and enterprise AI into one team.",
+        "services": "Two integrated pillars: enterprise AI with sovereign deployment, and GeoAI advisory.",
+        "projects": "The project categories we work in and our role in each.",
+        "team": "The company's leadership and the technical network behind it.",
+        "contact": "Tell us about your project. We reply within one business day.", "more": "Learn more"},
+}
+
+def sec_about(t):
+    why = "".join(f'<div class="card"><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for a, b in t["why"])
+    return f'''<section class="alt"><div class="wrap stack g48">
+  <div class="cols"><div class="stack g12"><h2 style="font-size:28px">{t["vision_h"]}</h2><p class="muted">{t["vision"]}</p></div><div class="stack g12"><h2 style="font-size:28px">{t["mission_h"]}</h2><p class="muted">{t["mission"]}</p></div></div>
+  <div class="stack g12 gap-note"><h3>{t["gap_h"]}</h3><p class="muted">{t["gap"]}</p></div>
+</div></section>
+<section><div class="wrap stack g48">
+  <div class="stack g12" style="max-width:640px"><p class="eyebrow">{t["why_eyebrow"]}</p><h2>{t["why_h"]}</h2></div>
+  <div class="cards">{why}</div>
+</div></section>
+'''
+
+def sec_services(t):
     pillars = ""
     for p in t["pillars"]:
         items = "".join(f'<div class="principle"><h3>{esc(a)}</h3><p>{esc(c)}</p></div>' for a, c in p["items"])
         pillars += f'''<div class="card pillar">{ICONS[p["icon"]]}<p class="eyebrow">{p["tag"]}</p><h3>{esc(p["h"])}</h3><div class="stack">{items}</div><p class="outcome">{esc(p["outcome"])}</p></div>
 '''
+    return f'<section><div class="wrap"><div class="cards two">{pillars}</div></div></section>\n'
+
+def sec_projects(t):
     c = t["proj_cols"]
     proj = "".join(f'<div class="card"><p class="eyebrow">{esc(a)}</p><h3>{esc(b)}</h3><p><strong>{c[2]}:</strong> {esc(r)}</p></div>' for a, b, r in t["proj"])
+    return f'<section><div class="wrap stack g48"><p class="muted" style="max-width:72ch">{t["proj_note"]}</p><div class="cards">{proj}</div></div></section>\n'
+
+def sec_team(t):
     team = ""
     for n, r, pts in t["team"]:
         lis = f'<ul>{"".join(f"<li>{esc(x)}</li>" for x in pts)}</ul>' if pts else ""
         team += f'<div class="card"><h3>{esc(n)}</h3><p class="eyebrow">{esc(r)}</p>{lis}</div>\n'
-    why = "".join(f'<div class="card"><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for a, b in t["why"])
+    return f'<section><div class="wrap stack g48"><div class="cards">{team}</div><p class="muted" style="max-width:70ch">{t["network"]}</p></div></section>\n'
+
+def sec_contact(lang, t):
     rows = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in contact_items(lang))
     book = f'<div class="btns"><a class="btn" href="{BOOKING_URL}" target="_blank" rel="noopener">{t["book"]}</a></div>' if BOOKING_URL else ""
+    return f'''<section><div class="wrap cols">
+    <div class="stack g28"><p class="muted">{t["contact_p"]}</p><dl class="rows">{rows}</dl>{book}</div>
+    {form_html(lang)}
+  </div></section>
+'''
+
+HEAD = {"about": ("about_eyebrow", "about_h"), "services": ("svc_eyebrow", "svc_h"), "projects": ("proj_eyebrow", "proj_h"),
+        "team": ("team_eyebrow", "team_h"), "contact": ("contact_eyebrow", "contact_h")}
+
+def page(lang, key):
+    t = T[lang]; eb, hh = HEAD[key]
+    sec = {"about": lambda: sec_about(t), "services": lambda: sec_services(t), "projects": lambda: sec_projects(t),
+           "team": lambda: sec_team(t), "contact": lambda: sec_contact(lang, t)}[key]()
+    title = f'{t[hh]} | {t["brand"]}'
+    desc = {"about": t["vision"], "services": t["gap"][:0] + GO[lang]["services"], "projects": GO[lang]["projects"],
+            "team": GO[lang]["team"], "contact": t["contact_p"]}[key]
+    crumb = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": t["home_label"], "item": url(lang, "home")},
+        {"@type": "ListItem", "position": 2, "name": t[hh], "item": url(lang, key)}]}
+    body = f'''<body>
+{header(lang, key)}<main id="main">
+<section class="page-hero"><div class="wrap stack g20"><nav class="crumbs" aria-label="breadcrumb"><a href="{t["base"]}">{t["home_label"]}</a><span aria-hidden="true">/</span><span>{t[hh]}</span></nav><p class="eyebrow">{t[eb]}</p><h1>{t[hh]}</h1></div></section>
+{sec}</main>
+{footer(lang)}<script src="{JS}" defer></script>
+</body></html>
+'''
+    return head(lang, key, title, desc, [crumb]) + body
+
+def home(lang):
+    t = T[lang]; g = GO[lang]
+    arrow = "←" if lang == "ar" else "→"
+    trust = "".join("<li>" + esc(x).replace("PfMP · PgMP · PMP", "<bdi>PfMP · PgMP · PMP</bdi>") + "</li>" for x in t["trust"])
+    logo = f"/assets/img/logo-{lang}.png"
+    dims = {"ar": (440, 486), "en": (440, 573)}[lang]
+    names = dict(t["nav"])
+    cards = "".join(f'<div class="card link"><h3>{names[k]}</h3><p>{g[k]}</p><a class="more stretch" href="{path_for(lang, k)}">{g["more"]} {arrow}</a></div>' for k in PAGES[:4])
     body = f'''<body>
 {header(lang, "home")}<main id="main">
 <section class="hero">
@@ -321,40 +386,14 @@ def home(lang):
       <p class="eyebrow">{t["eyebrow"]}</p>
       <h1>{t["h1"]}</h1>
       <p class="lead">{t["lead"]}</p>
-      <div class="btns"><a class="btn gold" href="#contact">{t["cta1"]}</a><a class="btn" href="#services">{t["cta2"]}</a></div>
+      <div class="btns"><a class="btn gold" href="{path_for(lang, "contact")}">{t["cta1"]}</a><a class="btn" href="{path_for(lang, "services")}">{t["cta2"]}</a></div>
     </div>
     <div class="hero-art"><div class="emb"><img src="{logo}" alt="{t["logo_alt"]}" width="{dims[0]}" height="{dims[1]}" fetchpriority="high"><span class="sheen" style="--m:url({logo})" aria-hidden="true"></span></div></div>
   </div>
 </section>
 <section class="trustbar"><div class="wrap"><ul>{trust}</ul></div></section>
-<section id="about" class="alt"><div class="wrap stack g48">
-  <div class="stack g12" style="max-width:640px"><p class="eyebrow">{t["about_eyebrow"]}</p><h2>{t["about_h"]}</h2></div>
-  <div class="cols"><div class="stack g12"><h3>{t["vision_h"]}</h3><p class="muted">{t["vision"]}</p></div><div class="stack g12"><h3>{t["mission_h"]}</h3><p class="muted">{t["mission"]}</p></div></div>
-  <div class="stack g12 gap-note"><h3>{t["gap_h"]}</h3><p class="muted">{t["gap"]}</p></div>
-</div></section>
-<section id="services"><div class="wrap stack g48">
-  <div class="stack g12" style="max-width:640px"><p class="eyebrow">{t["svc_eyebrow"]}</p><h2>{t["svc_h"]}</h2></div>
-  <div class="cards two">{pillars}</div>
-</div></section>
-<section id="projects" class="alt"><div class="wrap stack g48">
-  <div class="stack g12" style="max-width:720px"><p class="eyebrow">{t["proj_eyebrow"]}</p><h2>{t["proj_h"]}</h2><p class="muted">{t["proj_note"]}</p></div>
-  <div class="cards">{proj}</div>
-</div></section>
-<section id="team"><div class="wrap stack g48">
-  <div class="stack g12" style="max-width:640px"><p class="eyebrow">{t["team_eyebrow"]}</p><h2>{t["team_h"]}</h2></div>
-  <div class="cards">{team}</div>
-  <p class="muted" style="max-width:70ch">{t["network"]}</p>
-</div></section>
-<section id="why" class="alt"><div class="wrap stack g48">
-  <div class="stack g12" style="max-width:640px"><p class="eyebrow">{t["why_eyebrow"]}</p><h2>{t["why_h"]}</h2></div>
-  <div class="cards">{why}</div>
-</div></section>
-<section id="contact">
-  <div class="wrap cols">
-    <div class="stack g28"><div class="stack g20"><p class="eyebrow">{t["contact_eyebrow"]}</p><h2>{t["contact_h"]}</h2><p class="muted">{t["contact_p"]}</p></div><dl class="rows">{rows}</dl>{book}</div>
-    {form_html(lang)}
-  </div>
-</section>
+<section><div class="wrap stack g48"><div class="cards">{cards}</div></div></section>
+<section class="alt cta"><div class="wrap"><div class="stack g12"><h2>{t["contact_h"]}</h2><p class="muted">{g["contact"]}</p></div><div class="btns"><a class="btn gold" href="{path_for(lang, "contact")}">{t["cta1"]}</a></div></div></section>
 </main>
 {footer(lang)}<script src="{JS}" defer></script>
 </body></html>
@@ -393,7 +432,7 @@ def notfound():
 def sitemap():
     out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for lang in ("ar", "en"):
-        for k in ("home", "privacy"):
+        for k in ["home"] + PAGES + ["privacy"]:
             o = T[lang]["other"]
             out.append(f'<url><loc>{url(lang, k)}</loc><xhtml:link rel="alternate" hreflang="{lang}" href="{url(lang, k)}"/>'
                        f'<xhtml:link rel="alternate" hreflang="{o}" href="{url(o, k)}"/><xhtml:link rel="alternate" hreflang="x-default" href="{url("ar", k)}"/></url>')
@@ -404,6 +443,7 @@ if __name__ == "__main__":
     for lang in ("ar", "en"):
         b = T[lang]["base"].lstrip("/")
         write(f"{b}index.html", home(lang))
+        for k in PAGES: write(f"{b}{k}/index.html", page(lang, k))
         write(f"{b}privacy/index.html", privacy(lang))
     write("404.html", notfound())
     write("sitemap.xml", sitemap())

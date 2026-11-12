@@ -1,6 +1,6 @@
 # Avyra Company website
 
-Static, bilingual (Arabic default at `/`, English at `/en/`) site for Avyra Company / شركة أفيرا.
+Static, bilingual (Arabic default at `/`, English at `/en/`) site for Avyra Company / شركة أفيرا. Pages: home, about, services, projects (experience), team, contact, privacy.
 Built from the Alkarar Arrow site template (same fonts, CSS and JS).
 
 ## Editing
