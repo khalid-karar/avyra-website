@@ -416,4 +416,4 @@ html[lang="ar"] .lg h3{letter-spacing:.04em;text-transform:none;font-size:16px!i
 .pillar .outcome{margin-top:auto;border-top:1px solid var(--line);padding-top:18px;color:var(--gold);font-size:18px}
 .gap-note{max-width:78ch;border-inline-start:2px solid var(--gold-deep);padding-inline-start:20px}
 .trustbar{padding-block:0!important}
-.cards.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr))}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr));align-items:start}
