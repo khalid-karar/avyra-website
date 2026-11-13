@@ -20,7 +20,7 @@ PHONE_DISPLAY = "+966 50 020 9038"                   # e.g. "+966 5X XXX XXXX"; 
 PHONE_TEL = "+966500209038"                       # e.g. "+9665XXXXXXXX"
 LINKEDIN_URL = ""                    # empty hides the LinkedIn row
 BOOKING_URL = ""                     # Cal.com / Calendly link; empty hides the "book a call" button
-CR = ""                              # commercial registration number; empty hides it
+CR = "7050745707"                    # same legal entity as Maya AI / Sahm Alkarar
 # Contact form: empty endpoint = opens the visitor's email app. For Web3Forms use
 # FORM_ENDPOINT = "https://api.web3forms.com/submit" and put the access key in FORM_KEY.
 FORM_ENDPOINT = ""
@@ -33,6 +33,7 @@ PRELOAD = {"ar": _P("ibm-plex-sans-arabic-arabic-400") + _P("reem-kufi-arabic-70
 ICONS = {
  "ai": '<svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24"/><rect x="19" y="19" width="10" height="10"/><path d="M18 12V5M24 12V5M30 12V5M18 43v-7M24 43v-7M30 43v-7M12 18H5M12 24H5M12 30H5M43 18h-7M43 24h-7M43 30h-7"/></svg>',
  "geo": '<svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c-7 5-7 27 0 32M24 8c7 5 7 27 0 32"/></svg>',
+ "gov": '<svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="30" width="32" height="10"/><rect x="12" y="18" width="24" height="10"/><rect x="16" y="6" width="16" height="10"/></svg>',
 }
 
 # ---------------------------------------------------------------- content
@@ -41,18 +42,19 @@ T = {
  "dir": "rtl", "lang": "ar", "base": "/", "other": "en", "other_label": "English", "locale": "ar_SA", "other_locale": "en_US",
  "brand": "شركة أفيرا", "brand_core": "أفيرا", "co": "شركة", "skip": "انتقل إلى المحتوى", "home_label": "الرئيسية",
  "nav": [("about", "عن الشركة"), ("services", "خدماتنا"), ("projects", "خبراتنا"), ("team", "الفريق"), ("contact", "تواصل معنا")],
+ "nav_services": "خدماتنا",
  "title": "شركة أفيرا | الذكاء الاصطناعي المؤسسي والذكاء الجيومكاني وحوكمة المحافظ في الرياض",
  "desc": "شركة أفيرا شركة سعودية في الرياض تجمع حلول الذكاء الاصطناعي المؤسسي، والذكاء الاصطناعي الجيومكاني (GeoAI)، وحوكمة المحافظ لدعم برامج التحول الرقمي والبيئة في رؤية 2030.",
  "eyebrow": "الرياض · المملكة العربية السعودية",
  "h1": "من البيانات المعقدة إلى قرارات محوكمة",
  "lead": "الذكاء الاصطناعي المؤسسي والجيومكاني (GeoAI) وحوكمة المحافظ للجهات الحكومية والشركات والمنشآت الصغيرة والمتوسطة والمكاتب المهنية. نحوّل التعقيد إلى ذكاء محوكم، والذكاء إلى أثر مستدام.",
  "cta1": "تواصل معنا", "cta2": "خدماتنا", "logo_alt": "شعار أفيرا",
- "trust": ["محترفو إدارة المحافظ والبرامج والمشاريع: PfMP · PgMP · PMP", "شركة سعودية مسجلة في الرياض", "تصميم متوافق مع ضوابط NCA-ECC", "تنفيذ بالشراكة مع شركاء تقنيين من الولايات المتحدة وألمانيا"],
+ "trust": ["اعتمادات PfMP · PgMP · PMP في إدارة المحافظ والبرامج والمشاريع", "شركة سعودية مسجلة في الرياض", "تصميم متوافق مع ضوابط NCA-ECC", "تنفيذ بالشراكة مع شركاء تقنيين من الولايات المتحدة وألمانيا"],
  "about_eyebrow": "عن الشركة", "about_h": "الرؤية والرسالة",
  "vision_h": "رؤيتنا", "vision": "أن نكون الشريك الموثوق للمملكة في تمكين القرار، عبر حلول ذكية ومستدامة وفعّالة اقتصاديًا تتحول إلى محافظ منظّمة تقودها البيانات.",
  "mission_h": "رسالتنا", "mission": "نطوّر وننشر أنظمة ذكاء الأعمال بالذكاء الاصطناعي وحلول GeoAI وأطر حوكمة المحافظ، لتساعد الجهات السعودية على التعامل مع بياناتها بوصفها أصلًا استراتيجيًا. وبدمج الهندسة المتقدمة للذكاء الاصطناعي المؤسسي مع GeoAI وإدارة المحافظ والبرامج والمشاريع المعتمدة، نحوّل البيانات المعقدة إلى معلومات جاهزة لمجلس الإدارة.",
  "gap_h": "لماذا وُجدنا", "gap": "معظم الجهات تقدّم قطعة واحدة من الصورة. شركات الاستشارات الهندسية التقليدية تقدّم دراسات فنية دون حوكمة للمحافظ، وشركات الذكاء الاصطناعي تبني النماذج دون فهم لعدم اليقين في البيانات البيئية والمكانية. نحن نجمع الأمور الثلاثة: الحوكمة، وGeoAI، والنشر التشغيلي للذكاء الاصطناعي، في كيان سعودي واحد.",
- "svc_eyebrow": "خدماتنا", "svc_h": "ركيزتان متكاملتان",
+ "svc_eyebrow": "خدماتنا", "svc_h": "ثلاث ركائز متكاملة",
  "pillars": [
   {"icon": "ai", "tag": "الركيزة أ", "h": "الذكاء الاصطناعي المؤسسي والتحول الرقمي والنشر السيادي",
    "items": [("وكلاء الذكاء الاصطناعي وأتمتة سير العمل", "أتمتة تحت إشراف بشري لعمليات الجهة وموافقاتها وتنفيذ خدماتها."),
@@ -67,6 +69,11 @@ T = {
              ("الذكاء المكاني والتشغيلي", "مراقبة البنية التحتية، والوعي بالعمليات الميدانية، ورؤية بيئية للأصول الموزعة."),
              ("مفاهيم التوأم الرقمي للبنية التحتية", "تقييم الجاهزية وتصميم البنية وخارطة طريق التنفيذ للتوائم الرقمية للبنية التحتية.")],
    "outcome": "من بيانات الأقمار الصناعية إلى قرار مجلس الإدارة، في أسابيع لا سنوات."},
+  {"icon": "gov", "tag": "الركيزة ج", "h": "حوكمة المحافظ والبرامج والمشاريع",
+   "items": [("تقييم نضج الحوكمة", "تقييم واقع إدارة المحافظ والبرامج لديكم مقابل أفضل الممارسات، وتحديد الفجوات ذات الأولوية."),
+             ("تصميم أطر الحوكمة", "بناء أطر لإدارة المحافظ والبرامج والمشاريع تناسب حجم الجهة وهيكلها."),
+             ("الدعم الاستشاري المعتمد", "دعم مكاتب إدارة المشاريع بخبرة معتمدة في PfMP وPgMP وPMP.")],
+   "outcome": "محفظة مشاريع تُدار بوضوح، من الأولوية إلى الأثر."},
  ],
  "proj_eyebrow": "خبراتنا", "proj_h": "نماذج من خبراتنا",
  "proj_note": "تحافظ أفيرا على السرية. تُشارك المراجع التفصيلية ودراسات الحالة مباشرة، بعد توقيع اتفاقيات السرية المناسبة. وتمثل الفئات أدناه الخبرة المجمّعة لقيادة الشركة وفرق شركائها.",
@@ -76,7 +83,8 @@ T = {
           ("أنظمة GeoAI مخصصة", "حلول GeoAI", "بناء النظام مع شريك التطوير"),
           ("التحول الرقمي", "برامج التحول الرقمي للشركات", "الاستشارات ودعم التنفيذ")],
  "team_eyebrow": "الفريق", "team_h": "القيادة",
- "team": [("م. خالد عبدالرحمن", "الرئيس التنفيذي"), ("د. محمد عبدالله", "المدير الفني")],
+ "team": [("م. خالد عبدالرحمن", "الرئيس التنفيذي", "قاد عمليات الشركة في المملكة وشراكتها الدولية على مدى أكثر من عشر سنوات في تسليم برمجيات المؤسسات والتحول الرقمي الحكومي."),
+          ("د. محمد عبدالله", "المدير الفني", "حاصل على اعتمادات PfMP وPgMP وPMP في إدارة المحافظ والبرامج والمشاريع.")],
  "network": "يقود فريقنا الأساسي كل مشروع، ويُنفَّذ بدعم مهندسين ومحللين متخصصين في الذكاء الاصطناعي وتطوير التطبيقات المتكاملة والاستشعار عن بعد ونظم المعلومات الجغرافية، وخبراء في البيئة والبنية التحتية.",
  "why_eyebrow": "لماذا أفيرا", "why_h": "الميزة السعودية",
  "why": [("شركة سعودية مسجلة ومقرها الرياض", "نعمل داخل بيئتكم التنظيمية وبيئة المشتريات."),
@@ -112,18 +120,19 @@ T = {
  "dir": "ltr", "lang": "en", "base": "/en/", "other": "ar", "other_label": "العربية", "locale": "en_US", "other_locale": "ar_SA",
  "brand": "Avyra Company", "brand_core": "AVYRA", "co": "Company", "skip": "Skip to content", "home_label": "Home",
  "nav": [("about", "About"), ("services", "Services"), ("projects", "Experience"), ("team", "Team"), ("contact", "Contact")],
+ "nav_services": "Services",
  "title": "Avyra Company | Enterprise AI, GeoAI and Portfolio Governance in Riyadh",
  "desc": "Avyra Company is a Saudi company in Riyadh combining enterprise AI deployment, GeoAI and portfolio governance for Vision 2030 digital transformation and environmental programs.",
  "eyebrow": "Riyadh · Saudi Arabia",
  "h1": "From complex data to governed decisions.",
  "lead": "Enterprise AI, GeoAI and portfolio governance for government, corporates, SMEs and professional firms. We turn complexity into governed intelligence, and intelligence into sustainable impact.",
  "cta1": "Contact us", "cta2": "Our services", "logo_alt": "Avyra logo",
- "trust": ["Certified portfolio, program and project professionals (PfMP · PgMP · PMP)", "Saudi-registered, Riyadh-based", "Designed to align with NCA-ECC", "Delivering with US and German technology partners"],
+ "trust": ["PfMP · PgMP · PMP certified portfolio, program and project management", "Saudi-registered, Riyadh-based", "Designed to align with NCA-ECC", "Delivering with US and German technology partners"],
  "about_eyebrow": "About", "about_h": "Vision and mission",
  "vision_h": "Our vision", "vision": "To be the Kingdom's trusted partner in enabling decisions, through smart, sustainable and economically sound solutions that become governed, data-driven portfolios.",
  "mission_h": "Our mission", "mission": "We develop and deploy AI business-intelligence systems, GeoAI solutions and portfolio governance frameworks that help Saudi organizations treat data as a strategic asset. By combining enterprise-grade AI engineering, GeoAI, and certified portfolio, program and project management, we turn complex data into boardroom-ready intelligence.",
  "gap_h": "Why we exist", "gap": "Most firms offer one piece of the puzzle. Traditional engineering consultancies deliver technical studies but lack portfolio governance. Pure AI firms build models but do not understand real-world uncertainty in environmental and spatial data. We bring all three together under one Saudi-registered entity: governance, GeoAI and operational AI deployment.",
- "svc_eyebrow": "Services", "svc_h": "Two integrated pillars",
+ "svc_eyebrow": "Services", "svc_h": "Three integrated pillars",
  "pillars": [
   {"icon": "ai", "tag": "Pillar A", "h": "Enterprise AI, digital transformation and sovereign deployment",
    "items": [("AI agents and workflow automation", "Human-supervised automation for operations, approvals and service execution."),
@@ -138,6 +147,11 @@ T = {
              ("Spatial and operational intelligence", "Infrastructure monitoring, field operations awareness and environmental visibility for distributed assets."),
              ("Digital twin concepts for infrastructure", "Readiness assessment, architecture design and an implementation roadmap for infrastructure digital twins.")],
    "outcome": "From satellite data to a boardroom decision, in weeks, not years."},
+  {"icon": "gov", "tag": "Pillar C", "h": "Portfolio, Program and Project Governance",
+   "items": [("Governance maturity assessment", "Assessing your current portfolio and program management against leading practice, and prioritizing the gaps that matter."),
+             ("Governance framework design", "Building portfolio, program and project governance frameworks sized to your organization."),
+             ("Certified advisory support", "Supporting PMOs with certified PfMP, PgMP and PMP expertise.")],
+   "outcome": "A portfolio managed with clarity, from priority to impact."},
  ],
  "proj_eyebrow": "Experience", "proj_h": "Representative experience",
  "proj_note": "Avyra prioritizes confidentiality. Specific organizational references and detailed case studies are shared directly under appropriate confidentiality agreements. The categories below represent the combined track record of our leadership and partner teams.",
@@ -147,7 +161,8 @@ T = {
           ("Custom GeoAI systems", "GeoAI solutions", "System build with our development partner"),
           ("Digital transformation", "Digital transformation programs for companies", "Advisory and delivery support")],
  "team_eyebrow": "Team", "team_h": "Leadership",
- "team": [("Eng. Khalid Abdelrahman", "Chief Executive Officer"), ("Dr. Mohammed Abdallah", "Technical Director")],
+ "team": [("Eng. Khalid Abdelrahman", "Chief Executive Officer", "Has led the company’s operations in the Kingdom and its international partnership for over a decade, in enterprise software delivery and government digital transformation."),
+          ("Dr. Mohammed Abdallah", "Technical Director", "Holds PfMP, PgMP and PMP certifications in portfolio, program and project management.")],
  "network": "Every engagement is led by our core team and delivered with specialist engineers and analysts in AI, full-stack development, GIS and remote sensing, and infrastructure and environmental advisory.",
  "why_eyebrow": "Why Avyra", "why_h": "The Saudi advantage",
  "why": [("Saudi-registered, Riyadh-based", "We operate inside your regulatory and procurement environment."),
@@ -263,14 +278,14 @@ def contact_items(lang):
 def footer(lang):
     t = T[lang]; L = t["labels"]; b = t["base"]
     nav = "".join(f'<li><a href="{path_for(lang, k)}">{n}</a></li>' for k, n in t["nav"][:4])
-    contact = "".join(f"<li>{v}</li>" for _, v in contact_items(lang))
+    contact = "".join(f"<li>{v}</li>" for k, v in contact_items(lang) if k != L["cr"])
     return f'''<footer class="site">
   <div class="wrap">
     <div class="stack g12"><a class="brand" href="{b}"><img src="/assets/img/mark.png" alt="" width="34" height="36" loading="lazy"><span class="brand-txt"><span class="brand-name" style="font-size:20px">{esc(t["brand_core"])}</span><span class="brand-co">{t["co"]}</span></span></a>
       <p>{L["hq_val"]}</p></div>
     <div><h2>{L["links_h"]}</h2><ul>{nav}</ul></div>
     <div><h2>{L["contact_h"]}</h2><ul>{contact}</ul></div>
-    <div><h2>{L["company_h"]}</h2><ul><li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
+    <div><h2>{L["company_h"]}</h2><ul>{"<li>" + L["cr"] + ": <bdi>" + CR + "</bdi></li>" if CR else ""}<li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
     <p class="fine">© 2026 {esc(t["brand"])}. {L["rights"]}.</p>
   </div>
 </footer>
@@ -281,7 +296,7 @@ def form_html(lang):
     opts = "".join(f'<option value="{esc(o)}">{o}</option>' for o in f["opts"])
     action = FORM_ENDPOINT or f"mailto:{EMAIL}"
     return f'''<form class="form" id="f-home" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-key="{FORM_KEY}" data-subject="{esc(f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
-  <h3>{f["h"]}</h3>
+  <h2>{f["h"]}</h2>
   <div class="fields">
     <label for="f-name">{f["name"]}<input id="f-name" name="name" type="text" autocomplete="name" required></label>
     <label for="f-org">{f["org"]}<input id="f-org" name="organization" type="text" autocomplete="organization"></label>
@@ -300,15 +315,15 @@ def form_html(lang):
 PAGES = ["about", "services", "projects", "team", "contact"]
 GO = {
  "ar": {"about": "رؤيتنا ورسالتنا، ولماذا نجمع الحوكمة وGeoAI والذكاء الاصطناعي المؤسسي في فريق واحد.",
-        "services": "ركيزتان متكاملتان: الذكاء الاصطناعي المؤسسي والنشر السيادي، والاستشارات في GeoAI.",
+        "services": "ثلاث ركائز متكاملة: الذكاء الاصطناعي المؤسسي، والاستشارات في GeoAI، وحوكمة المحافظ والبرامج.",
         "projects": "فئات المشاريع التي نعمل فيها ودورنا في كل منها.",
         "team": "قيادة الشركة والشبكة الفنية التي تدعمها.",
-        "contact": "اكتب لنا عن مشروعك، ونرد خلال يوم عمل واحد.", "more": "اعرف المزيد"},
+        "contact": "اكتب لنا عن مشروعك، ونرد خلال يوم عمل واحد.", "more": "اعرف المزيد", "explore_h": "استكشف أفيرا"},
  "en": {"about": "Our vision and mission, and why we bring governance, GeoAI and enterprise AI into one team.",
-        "services": "Two integrated pillars: enterprise AI with sovereign deployment, and GeoAI advisory.",
+        "services": "Three integrated pillars: enterprise AI, GeoAI advisory, and portfolio and program governance.",
         "projects": "The project categories we work in and our role in each.",
         "team": "The company's leadership and the technical network behind it.",
-        "contact": "Tell us about your project. We reply within one business day.", "more": "Learn more"},
+        "contact": "Tell us about your project. We reply within one business day.", "more": "Learn more", "explore_h": "Explore Avyra"},
 }
 
 def sec_about(t):
@@ -327,22 +342,22 @@ def sec_services(t):
     pillars = ""
     for p in t["pillars"]:
         items = "".join(f'<div class="principle"><h3>{esc(a)}</h3><p>{esc(c)}</p></div>' for a, c in p["items"])
-        pillars += f'''<div class="card pillar">{ICONS[p["icon"]]}<p class="eyebrow">{p["tag"]}</p><h3>{esc(p["h"])}</h3><div class="stack">{items}</div><p class="outcome">{esc(p["outcome"])}</p></div>
+        pillars += f'''<div class="card pillar">{ICONS[p["icon"]]}<p class="eyebrow">{p["tag"]}</p><h2>{esc(p["h"])}</h2><div class="stack">{items}</div><p class="outcome">{esc(p["outcome"])}</p></div>
 '''
     return f'<section><div class="wrap"><div class="cards two">{pillars}</div></div></section>\n'
 
 def sec_projects(t):
     c = t["proj_cols"]
-    proj = "".join(f'<div class="card"><p class="eyebrow">{esc(a)}</p><h3>{esc(b)}</h3><p><strong>{c[2]}:</strong> {esc(r)}</p></div>' for a, b, r in t["proj"])
+    proj = "".join(f'<div class="card"><p class="eyebrow">{esc(a)}</p><h2>{esc(b)}</h2><p><strong>{c[2]}:</strong> {esc(r)}</p></div>' for a, b, r in t["proj"])
     return f'<section><div class="wrap stack g48"><p class="muted" style="max-width:72ch">{t["proj_note"]}</p><div class="cards">{proj}</div></div></section>\n'
 
 def sec_team(t):
     team = ""
-    for n, r in t["team"]:
+    for n, r, note in t["team"]:
         lines = []
         if PHONE_TEL: lines.append(f'<li><a href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a></li>')
         lines.append(f'<li><a href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></li>')
-        team += f'<div class="card"><h3>{esc(n)}</h3><p class="eyebrow">{esc(r)}</p><ul>{"".join(lines)}</ul></div>\n'
+        team += f'<div class="card"><h2>{esc(n)}</h2><p class="eyebrow">{esc(r)}</p><p class="muted">{esc(note)}</p><ul>{"".join(lines)}</ul></div>\n'
     return f'<section><div class="wrap stack g48"><div class="cards">{team}</div><p class="muted" style="max-width:70ch">{t["network"]}</p></div></section>\n'
 
 def sec_contact(lang, t):
@@ -356,20 +371,21 @@ def sec_contact(lang, t):
 
 HEAD = {"about": ("about_eyebrow", "about_h"), "services": ("svc_eyebrow", "svc_h"), "projects": ("proj_eyebrow", "proj_h"),
         "team": ("team_eyebrow", "team_h"), "contact": ("contact_eyebrow", "contact_h")}
+SUB = {"services": "svc_h"}
 
 def page(lang, key):
     t = T[lang]; eb, hh = HEAD[key]
     sec = {"about": lambda: sec_about(t), "services": lambda: sec_services(t), "projects": lambda: sec_projects(t),
            "team": lambda: sec_team(t), "contact": lambda: sec_contact(lang, t)}[key]()
-    title = f'{t[hh]} | {t["brand"]}'
+    title = f'{(t["nav_services"] if key in SUB else t[hh])} | {t["brand"]}'
     desc = {"about": t["vision"], "services": t["gap"][:0] + GO[lang]["services"], "projects": GO[lang]["projects"],
             "team": GO[lang]["team"], "contact": t["contact_p"]}[key]
     crumb = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": t["home_label"], "item": url(lang, "home")},
-        {"@type": "ListItem", "position": 2, "name": t[hh], "item": url(lang, key)}]}
+        {"@type": "ListItem", "position": 2, "name": t["nav_services"] if key in SUB else t[hh], "item": url(lang, key)}]}
     body = f'''<body>
 {header(lang, key)}<main id="main">
-<section class="page-hero"><div class="wrap stack g20"><nav class="crumbs" aria-label="breadcrumb"><a href="{t["base"]}">{t["home_label"]}</a><span aria-hidden="true">/</span><span>{t[hh]}</span></nav><p class="eyebrow">{t[eb]}</p><h1>{t[hh]}</h1></div></section>
+<section class="page-hero"><div class="wrap stack g20"><nav class="crumbs" aria-label="breadcrumb"><a href="{t["base"]}">{t["home_label"]}</a><span aria-hidden="true">/</span><span>{t["nav_services"] if key in SUB else t[hh]}</span></nav><p class="eyebrow">{t[eb]}</p><h1>{t["nav_services"] if key in SUB else t[hh]}</h1>{('<p class="lead">' + t[SUB[key]] + '</p>') if key in SUB else ''}</div></section>
 {sec}</main>
 {footer(lang)}<script src="{JS}" defer></script>
 </body></html>
@@ -398,7 +414,7 @@ def home(lang):
   </div>
 </section>
 <section class="trustbar"><div class="wrap"><ul>{trust}</ul></div></section>
-<section><div class="wrap stack g48"><div class="cards">{cards}</div></div></section>
+<section><div class="wrap stack g48"><h2>{g["explore_h"]}</h2><div class="cards">{cards}</div></div></section>
 <section class="alt cta"><div class="wrap"><div class="stack g12"><h2>{t["contact_h"]}</h2><p class="muted">{g["contact"]}</p></div><div class="btns"><a class="btn gold" href="{path_for(lang, "contact")}">{t["cta1"]}</a></div></div></section>
 </main>
 {footer(lang)}<script src="{JS}" defer></script>
