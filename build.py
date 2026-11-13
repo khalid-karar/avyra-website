@@ -16,8 +16,8 @@ JS = "/assets/js/main.js?v=" + _v("assets/js/main.js")
 SITE = "https://avyra.sa"            # PLACEHOLDER: set the real domain
 EMAIL = "info@avyra.sa"              # PLACEHOLDER
 PRIVACY_EMAIL = "privacy@avyra.sa"   # PLACEHOLDER
-PHONE_DISPLAY = ""                   # e.g. "+966 5X XXX XXXX"; empty hides the phone rows
-PHONE_TEL = ""                       # e.g. "+9665XXXXXXXX"
+PHONE_DISPLAY = "+966 50 020 9038"                   # e.g. "+966 5X XXX XXXX"; empty hides the phone rows
+PHONE_TEL = "+966500209038"                       # e.g. "+9665XXXXXXXX"
 LINKEDIN_URL = ""                    # empty hides the LinkedIn row
 BOOKING_URL = ""                     # Cal.com / Calendly link; empty hides the "book a call" button
 CR = ""                              # commercial registration number; empty hides it
@@ -54,15 +54,17 @@ T = {
  "gap_h": "لماذا وُجدنا", "gap": "معظم الجهات تقدّم قطعة واحدة من الصورة. شركات الاستشارات الهندسية التقليدية تقدّم دراسات فنية دون حوكمة للمحافظ، وشركات الذكاء الاصطناعي تبني النماذج دون فهم لعدم اليقين في البيانات البيئية والمكانية. نحن نجمع الأمور الثلاثة: الحوكمة، وGeoAI، والنشر التشغيلي للذكاء الاصطناعي، في كيان سعودي واحد.",
  "svc_eyebrow": "خدماتنا", "svc_h": "ركيزتان متكاملتان",
  "pillars": [
-  {"icon": "ai", "tag": "الركيزة أ", "h": "حلول الذكاء الاصطناعي المؤسسي والنشر السيادي",
-   "items": [("وكلاء الذكاء الاصطناعي وأتمتة سير العمل", "أتمتة تحت إشراف بشري لعمليات الجهة وموافقاتها وتنفيذ خدماتها، مع سجلات تدقيق مدمجة."),
-             ("الذكاء المكاني والتشغيلي", "مراقبة البنية التحتية، والوعي بالعمليات الميدانية، ورؤية بيئية للأصول الموزعة."),
+  {"icon": "ai", "tag": "الركيزة أ", "h": "الذكاء الاصطناعي المؤسسي والتحول الرقمي والنشر السيادي",
+   "items": [("وكلاء الذكاء الاصطناعي وأتمتة سير العمل", "أتمتة تحت إشراف بشري لعمليات الجهة وموافقاتها وتنفيذ خدماتها."),
+             ("التحول الرقمي للشركات", "نساعد الشركات على تقييم وضعها الحالي وتحديد الأولويات وتطبيق أساليب عمل رقمية مدعومة بالذكاء الاصطناعي، من إعادة تصميم الإجراءات حتى التبني."),
+             ("تطوير المنصات المخصصة", "تصميم وبناء منصات وتطبيقات مخصصة مدعومة بالذكاء الاصطناعي حول طريقة عمل جهتك، من هندسة النظام حتى النشر."),
              ("ذكاء المعرفة والمستندات", "استرجاع مستندات المؤسسة وذكاء محتوى متعدد اللغات (عربي/إنجليزي) للجهات التي تدير منظومات مستندات ضخمة، من الجهات التنظيمية إلى المكاتب القانونية."),
              ("النشر الخاص والسيادي للذكاء الاصطناعي", "نشر على السحابة والسحابة الخاصة والبنية المحلية والهجينة، مصمَّم ليتوافق مع NCA-ECC وإرشادات سدايا ونظام حماية البيانات الشخصية، وهو أمر حاسم للجهات الحكومية.")],
    "outcome": "ذكاء اصطناعي مؤسسي يعمل داخل محيط الأمن والحوكمة لديك."},
   {"icon": "geo", "tag": "الركيزة ب", "h": "الاستشارات في الذكاء الاصطناعي الجيومكاني (GeoAI)",
    "items": [("النمذجة الهيدرولوجية المعززة بـ GeoAI", "دمج صور الأقمار الصناعية وبيانات الاستشعار عن بعد مع النماذج الهيدرولوجية لدعم قرارات الموارد المائية."),
              ("تصميم قواعد البيانات الجيومكانية والبنية المكانية", "تصميم قواعد بيانات جيومكانية وبنية بيانات مكانية (SDI) تجعل بيانات الجهة قابلة للمشاركة والتحليل."),
+             ("الذكاء المكاني والتشغيلي", "مراقبة البنية التحتية، والوعي بالعمليات الميدانية، ورؤية بيئية للأصول الموزعة."),
              ("مفاهيم التوأم الرقمي للبنية التحتية", "تقييم الجاهزية وتصميم البنية وخارطة طريق التنفيذ للتوائم الرقمية للبنية التحتية.")],
    "outcome": "من بيانات الأقمار الصناعية إلى قرار مجلس الإدارة، في أسابيع لا سنوات."},
  ],
@@ -71,10 +73,10 @@ T = {
  "proj_cols": ("القطاع", "نوع المشروع", "دورنا"),
  "proj": [("الذكاء الاصطناعي المؤسسي (السعودية)", "وكلاء ذكاء اصطناعي لسير عمل الخدمات", "نشر تشغيلي للذكاء الاصطناعي"),
           ("أنظمة ذكاء اصطناعي مخصصة", "تطوير تطبيقات ذكاء اصطناعي متكاملة", "هندسة النظام ونشره"),
-          ("أنظمة GeoAI مخصصة", "لوحات متابعة وخطوط بيانات GeoAI", "بناء النظام مع شريك التطوير")],
+          ("أنظمة GeoAI مخصصة", "حلول GeoAI", "بناء النظام مع شريك التطوير"),
+          ("التحول الرقمي", "برامج التحول الرقمي للشركات", "الاستشارات ودعم التنفيذ")],
  "team_eyebrow": "الفريق", "team_h": "القيادة",
- "team": [("م. خالد عبدالرحمن", "الرئيس التنفيذي", ["الذكاء الاصطناعي المؤسسي والنشر السيادي", "وكلاء الذكاء الاصطناعي والذكاء المكاني ونشر الذكاء الاصطناعي الخاص", "مصمَّم ليتوافق مع NCA-ECC، وملتزم بنظام حماية البيانات الشخصية وإرشادات سدايا"]),
-          ("د.-م. محمد عبدالله", "المدير الفني", [])],
+ "team": [("م. خالد عبدالرحمن", "الرئيس التنفيذي"), ("د. محمد عبدالله", "المدير الفني")],
  "network": "يدعمنا فريق موثوق من مطوّري الذكاء الاصطناعي والتطبيقات المتكاملة، ومحللي الاستشعار عن بعد ونظم المعلومات الجغرافية، وخبراء البيئة والبنية التحتية، ومنسّقي المشاريع، بما يتسع مع نطاق كل مشروع.",
  "why_eyebrow": "لماذا أفيرا", "why_h": "الميزة السعودية",
  "why": [("شركة سعودية مسجلة ومقرها الرياض", "نعمل داخل بيئتكم التنظيمية وبيئة المشتريات."),
@@ -85,7 +87,7 @@ T = {
          ("عمق تقني أمريكي وألماني", "تمنحنا شراكتنا التقنية في فرجينيا وألمانيا عمقًا هندسيًا، بينما تبقى المسؤولية والتنفيذ داخل المملكة.")],
  "contact_eyebrow": "تواصل معنا", "contact_h": "لنناقش مشروعك", "contact_p": "اكتب لنا عن احتياجك. يرد فريقنا في الرياض وفرجينيا خلال يوم عمل واحد، وتُعامل جميع الاستفسارات بسرية تامة.",
  "book": "احجز مكالمة تشخيصية مدتها 30 دقيقة", "linkedin": "لينكدإن",
- "labels": {"email": "البريد الإلكتروني", "phone": "الهاتف", "hq": "الموقع", "hq_val": "الرياض، المملكة العربية السعودية", "cr": "السجل التجاري",
+ "labels": {"email": "البريد الإلكتروني", "phone": "الهاتف", "hq": "الموقع", "hq_val": "حي العليا، الرياض، المملكة العربية السعودية", "cr": "السجل التجاري",
             "contact_h": "تواصل", "company_h": "الشركة", "privacy": "سياسة الخصوصية", "rights": "جميع الحقوق محفوظة", "links_h": "روابط"},
  "form": {"h": "أرسل لنا طلبك", "name": "الاسم", "org": "الجهة أو الشركة", "email": "البريد الإلكتروني", "phone": "الهاتف (اختياري)",
           "interest": "الخدمة المطلوبة", "msg": "رسالتك", "msg_ph": "اكتب هنا عن احتياجك أو المشروع الذي تعمل عليه.",
@@ -123,15 +125,17 @@ T = {
  "gap_h": "Why we exist", "gap": "Most firms offer one piece of the puzzle. Traditional engineering consultancies deliver technical studies but lack portfolio governance. Pure AI firms build models but do not understand real-world uncertainty in environmental and spatial data. We bring all three together under one Saudi-registered entity: governance, GeoAI and operational AI deployment.",
  "svc_eyebrow": "Services", "svc_h": "Two integrated pillars",
  "pillars": [
-  {"icon": "ai", "tag": "Pillar A", "h": "Enterprise AI solutions and sovereign deployment",
-   "items": [("AI agents and workflow automation", "Human-supervised automation for operations, approvals and service execution, with audit trails built in."),
-             ("Spatial and operational intelligence", "Infrastructure monitoring, field operations awareness and environmental visibility for distributed assets."),
+  {"icon": "ai", "tag": "Pillar A", "h": "Enterprise AI, digital transformation and sovereign deployment",
+   "items": [("AI agents and workflow automation", "Human-supervised automation for operations, approvals and service execution."),
+             ("Digital transformation for companies", "Helping companies assess where they stand, set priorities and roll out digital and AI-enabled ways of working, from process redesign to adoption."),
+             ("Custom platform development", "Designing and building custom AI-powered platforms and applications around how your organization works, from architecture to deployment."),
              ("Knowledge and document intelligence", "Enterprise document retrieval and multilingual (Arabic/English) content intelligence for organizations managing large document estates, from regulators to law firms."),
              ("Private and sovereign AI deployment", "Cloud, private cloud, on-premises and hybrid deployment, designed to align with NCA-ECC, SDAIA guidance and PDPL. Critical for government clients.")],
    "outcome": "Enterprise-grade AI that operates inside your security and governance perimeter."},
   {"icon": "geo", "tag": "Pillar B", "h": "GeoAI advisory",
    "items": [("GeoAI-enabled hydrological modeling", "Combining satellite imagery and remote-sensing data with hydrological models to support water-resource decisions."),
              ("Geospatial database and SDI design", "Designing geospatial databases and spatial data infrastructure that make an organization's data shareable and analyzable."),
+             ("Spatial and operational intelligence", "Infrastructure monitoring, field operations awareness and environmental visibility for distributed assets."),
              ("Digital twin concepts for infrastructure", "Readiness assessment, architecture design and an implementation roadmap for infrastructure digital twins.")],
    "outcome": "From satellite data to a boardroom decision, in weeks, not years."},
  ],
@@ -140,10 +144,10 @@ T = {
  "proj_cols": ("Sector", "Project type", "Our role"),
  "proj": [("Enterprise AI (KSA)", "AI agents for service workflows", "Operational AI deployment"),
           ("Custom AI systems", "Full-stack AI application development", "System architecture and deployment"),
-          ("Custom GeoAI systems", "GeoAI dashboards and data pipelines", "System build with our development partner")],
+          ("Custom GeoAI systems", "GeoAI solutions", "System build with our development partner"),
+          ("Digital transformation", "Digital transformation programs for companies", "Advisory and delivery support")],
  "team_eyebrow": "Team", "team_h": "Leadership",
- "team": [("Eng. Khalid Abdelrahman", "Chief Executive Officer", ["Enterprise AI and sovereign deployment", "AI agents, spatial intelligence and private AI deployment", "Designed to align with NCA-ECC; PDPL and SDAIA guidance applied"]),
-          ("Dr.-Ing. Mohammed Abdallah", "Technical Director", [])],
+ "team": [("Eng. Khalid Abdelrahman", "Chief Executive Officer"), ("Dr. Mohammed Abdallah", "Technical Director")],
  "network": "We are supported by a vetted network of AI and full-stack developers, remote sensing and GIS analysts, environmental and infrastructure experts, and project coordinators, scaled to each engagement.",
  "why_eyebrow": "Why Avyra", "why_h": "The Saudi advantage",
  "why": [("Saudi-registered, Riyadh-based", "We operate inside your regulatory and procurement environment."),
@@ -154,7 +158,7 @@ T = {
          ("US and German technology depth", "Our technology partnerships in Virginia and Germany bring engineering depth, while delivery and accountability stay in the Kingdom.")],
  "contact_eyebrow": "Contact", "contact_h": "Let's discuss your project", "contact_p": "Tell us what you need. Our teams in Riyadh and Virginia respond within one business day, and all inquiries are handled with strict confidentiality.",
  "book": "Book a 30-minute diagnostic call", "linkedin": "LinkedIn",
- "labels": {"email": "Email", "phone": "Phone", "hq": "Location", "hq_val": "Riyadh, Saudi Arabia", "cr": "C.R. number",
+ "labels": {"email": "Email", "phone": "Phone", "hq": "Location", "hq_val": "Al Olaya, Riyadh, Saudi Arabia", "cr": "C.R. number",
             "contact_h": "Contact", "company_h": "Company", "privacy": "Privacy policy", "rights": "All rights reserved", "links_h": "Links"},
  "form": {"h": "Send us a message", "name": "Name", "org": "Organization", "email": "Email", "phone": "Phone (optional)",
           "interest": "Service of interest", "msg": "Your message", "msg_ph": "Tell us about your need or the project you are working on.",
@@ -334,9 +338,11 @@ def sec_projects(t):
 
 def sec_team(t):
     team = ""
-    for n, r, pts in t["team"]:
-        lis = f'<ul>{"".join(f"<li>{esc(x)}</li>" for x in pts)}</ul>' if pts else ""
-        team += f'<div class="card"><h3>{esc(n)}</h3><p class="eyebrow">{esc(r)}</p>{lis}</div>\n'
+    for n, r in t["team"]:
+        lines = []
+        if PHONE_TEL: lines.append(f'<li><a href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a></li>')
+        lines.append(f'<li><a href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></li>')
+        team += f'<div class="card"><h3>{esc(n)}</h3><p class="eyebrow">{esc(r)}</p><ul>{"".join(lines)}</ul></div>\n'
     return f'<section><div class="wrap stack g48"><div class="cards">{team}</div><p class="muted" style="max-width:70ch">{t["network"]}</p></div></section>\n'
 
 def sec_contact(lang, t):
